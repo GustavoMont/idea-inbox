@@ -18,10 +18,12 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
-test = "echo Test!"
 start = "python3 src/main.py"
+dev = "watchmedo auto-restart --directory=. --pattern=\"*.py\" --recursive --no-restart-on-command-exit poe start"
+
 
 [dependency-groups]
 dev = [
-    "poethepoet (>=0.49.0,<0.50.0)"
+    "poethepoet (>=0.49.0,<0.50.0)",
+    "watchdog (==6.0.0)",
 ]
