@@ -26,4 +26,5 @@ dev = "watchmedo auto-restart --directory=. --pattern=\"*.py\" --recursive --no-
 dev = [
     "poethepoet (>=0.49.0,<0.50.0)",
     "watchdog (==6.0.0)",
+    "ruff (>=0.17.1,<0.18.0)",
 ]
