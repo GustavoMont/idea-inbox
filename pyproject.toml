@@ -20,6 +20,8 @@ build-backend = "poetry.core.masonry.api"
 [tool.poe.tasks]
 start = "python3 src/main.py"
 dev = "watchmedo auto-restart --directory=. --pattern=\"*.py\" --recursive --no-restart-on-command-exit poe start"
+lint_check = "ruff check ."
+lint_fix = "ruff check . --fix"
 
 
 [dependency-groups]

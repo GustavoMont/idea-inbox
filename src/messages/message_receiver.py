@@ -15,3 +15,6 @@ class APIMessageReceiver(MessageReceiver):
         print("Format the messages to a known format")
         print('-'*30)
         return []
+
+def test_lint(n):
+    return n
