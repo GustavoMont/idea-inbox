@@ -1,0 +1,35 @@
+name: CI
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install dependencies
+        run: |
+          pipx install poetry==2.5.1
+          poetry install
+
+      - name: Run Ruff linter
+        run: poetry run poe lint_check
+
+  formatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install dependencies
+        run: |
+          pipx install poetry==2.5.1
+          poetry install
+
+      - name: Run Ruff linter
+        run: poetry run poe format_check
