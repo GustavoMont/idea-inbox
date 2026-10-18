@@ -3,12 +3,12 @@ from abc import ABC, abstractmethod
 
 class Organizer(ABC):
     @abstractmethod
-    def organize(self, messages: list[Any], config: Any):
+    def organize(self, messages: list, config: ABC) -> None:
         pass
 
 
 class FileOrganizer(Organizer):
-    def organize(self, messages: list[Any], config: Any):
+    def organize(self, messages: list, config: ABC) -> None:
         print("Organizer: ", "-" * 19)
         print("1. Receive all messages")
         # ---
